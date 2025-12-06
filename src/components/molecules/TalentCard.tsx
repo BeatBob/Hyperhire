@@ -43,7 +43,9 @@ export function TalentCard({ talent, isActive = false, index = 0 }: TalentCardPr
           </div>
           <div className="mt-4 flex w-full flex-wrap items-center justify-center gap-2 text-xs font-semibold text-gray-700 md:mt-5 md:text-sm">
             {talent.skills.map((skill) => (
-              <span key={skill} className="rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-1.5 shadow-inner md:px-3.5 md:py-2">
+              <span
+                key={skill}
+                className="rounded-lg border border-gray-200 bg-gray-50 px-2.5 py-1.5 shadow-inner md:px-3.5 md:py-2">
                 {skill}
               </span>
             ))}
