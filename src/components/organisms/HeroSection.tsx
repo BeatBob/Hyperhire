@@ -36,28 +36,30 @@ function ServiceCarousel({ services }: { services: Service[] }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="relative mt-4 overflow-hidden pb-8 hidden md:block">
-      <div className="relative">
-        <motion.div
-          className="flex gap-4"
-          animate={{
-            x: -currentIndex * (cardWidth + gap),
-          }}
-          transition={{
-            duration: 0.5,
-            ease: 'easeInOut',
-          }}>
-          {[...services, ...services, ...services].map((service, index) => (
-            <div
-              key={`${service.name}-${index}`}
-              className="flex-shrink-0"
-              style={{
-                marginLeft: index === 0 ? 'max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem))' : '0',
-                width: `${cardWidth}px`,
-              }}>
-              <ServiceCard service={service} />
-            </div>
-          ))}
-        </motion.div>
+      <div className="mx-auto container px-5 lg:px-8">
+        <div className="relative -mx-5 lg:-mx-8">
+          <motion.div
+            className="flex gap-4"
+            animate={{
+              x: -currentIndex * (cardWidth + gap),
+            }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeInOut',
+            }}>
+            {[...services, ...services, ...services].map((service, index) => (
+              <div
+                key={`${service.name}-${index}`}
+                className="flex-shrink-0"
+                style={{
+                  marginLeft: index === 0 ? '1.25rem' : '0',
+                  width: `${cardWidth}px`,
+                }}>
+                <ServiceCard service={service} />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );
